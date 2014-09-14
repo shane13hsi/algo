@@ -38,7 +38,7 @@ To test the gradle installation, run Gralde from the shell:
 gradle
 ```
 
-### Find out what Gradle can do
+## Find out what Gradle can do
 
 Before you even create a `build.gradle` file for the project, you can ask it what tasks are available:
 
@@ -48,7 +48,7 @@ gradle tasks
 
 You will see very elementary tasks.
 
-### Build Java Code
+## Build Java Code
 
 Let's create a basic `build.gralde` file now with one simple line:
 
@@ -64,7 +64,36 @@ gradle build
 
 The build task compiles, tests and assembles the code into a JAR file. More informations can be found in the build subdirectories.
 
-### Declare dependencies
+## Declare dependencies
+
+First, specify the repositories that gradle will resolve dependencies from.
+
+```
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+```
+
+Now, declare dependencies:
+
+```
+dependencies {
+    compile 'com.google.guava:guava:18.0'
+}
+
+```
+
+Others notable types are: `providedCompile`, `testCompile`
+
+Finally, let's specify the name of our JAR artifact:
+
+```
+jar {
+    baseName = 'com.evanhsiwood.treeh'
+    version = '0.0.1-SNAPSHOT'
+}
+```
 
 ## Build your project with Gralde Wrapper
 

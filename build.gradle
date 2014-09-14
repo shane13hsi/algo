@@ -1,1 +1,15 @@
 apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:18.0'
+}
+
+jar {
+    baseName = 'com.evanhsiwood.treeh'
+    version = '0.0.1-SNAPSHOT'
+}
